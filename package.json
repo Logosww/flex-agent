@@ -1,0 +1,27 @@
+{
+  "name": "flex-agent",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel -r dev",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:backend": "pnpm --filter flex-agent-backend dev",
+    "build": "pnpm -r build",
+    "lint": "oxlint frontend backend",
+    "format": "oxfmt --write frontend backend",
+    "format:check": "oxfmt --check frontend backend",
+    "typecheck": "tsgo -p frontend/tsconfig.json --noEmit && tsgo -p backend/tsconfig.json --noEmit",
+    "start": "pnpm --parallel -r start"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "7.0.0-dev.20260623.1",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.72.0",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@11.9.0"
+}
